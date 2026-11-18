@@ -1,0 +1,128 @@
+{
+  "tasks": {
+    "preHorners": {
+      "context": "Require Export rec loop.\n",
+      "modules": [
+        "library/axioms.v",
+        "library/rel.v",
+        "library/basic.v",
+        "library/wire.v",
+        "library/loop.v",
+        "library/rec.v"
+      ]
+    },
+    "Horners": {
+      "context": "Require Export rec loop.\nRequire Import preHorners_prerequisite.\n",
+      "modules": [
+        "library/axioms.v",
+        "library/rel.v",
+        "library/basic.v",
+        "library/wire.v",
+        "library/loop.v",
+        "library/rec.v"
+      ]
+    },
+    "monitor": {
+      "context": "Require Import monitor_prerequisites.\nRequire Import Arith Lia.\nSection Task.\nLocal Open Scope nat_scope.\nVariable A : Type.\nVariable D : rel A A.\nVariable R : rel (A*A) A.\nHypothesis D_c2 : D^~1 ; D = id A.\nHypothesis Hpush : [D,D] ; R = R ; D.\nHypothesis Hassoc : rsh ; FST R ; R = SND R ; R.\nHypothesis Rdet : det R.\nLocal Notation P := (P A D R).\nLocal Notation Q := (Q A D R).\nLocal Notation PP := (PP A D R).\n\n",
+      "modules": [
+        "library/axioms.v",
+        "library/rel.v",
+        "library/basic.v",
+        "library/wire.v",
+        "library/rec.v",
+        "library/monitor_prerequisites.v"
+      ]
+    },
+    "contour_row": {
+      "context": "Require Import equational_helpers.\n\n",
+      "modules": [
+        "library/axioms.v",
+        "library/rel.v",
+        "library/basic.v",
+        "library/wire.v",
+        "library/wire_rec.v",
+        "library/rec.v",
+        "library/rows.v",
+        "library/contour_prerequisites.v",
+        "library/equational_helpers.v"
+      ]
+    },
+    "contour_right": {
+      "context": "Require Import grid_support.\n\n",
+      "modules": [
+        "library/axioms.v",
+        "library/rel.v",
+        "library/basic.v",
+        "library/wire.v",
+        "library/wire_rec.v",
+        "library/rec.v",
+        "library/rows.v",
+        "library/twod.v",
+        "library/contour_prerequisites.v",
+        "library/grid_helpers.v",
+        "library/equational_helpers.v",
+        "library/grid_support.v"
+      ]
+    },
+    "Cu0_Cu1": {
+      "context": "Require Import convolver_support.\n",
+      "modules": [
+        "library/axioms.v",
+        "library/rel.v",
+        "library/basic.v",
+        "library/wire.v",
+        "library/wire_rec.v",
+        "library/rec.v",
+        "library/rows.v",
+        "library/twod.v",
+        "library/convolver_support.v"
+      ]
+    }
+  },
+  "sha256": {
+    "benchmarks/Cu0_Cu1/formalisation.md": "82ab77b8c758c7fe6c4d5bc6804c57538816b2ced23bcd59e68458e9b373244b",
+    "benchmarks/Cu0_Cu1/library_interface.v": "8663b24d9970bb5357c23e2afd95a856d3d1e928f45bf62255f0de6bdb648f4f",
+    "benchmarks/Cu0_Cu1/paper_proof.md": "3f9a6a3a11608c03e31ef4d34fe7807139d6b82750023b169448f3669a3f8ace",
+    "benchmarks/Cu0_Cu1/target.v": "863a2ae606324a43b85daae924802cf838d741171a3d7a8000faa16848733599",
+    "benchmarks/Horners/formalisation.md": "85e5af9ee17a4e549f943d4323b62f5c061b31e90b8596f14782b4449cc025af",
+    "benchmarks/Horners/library_interface.v": "10f344951faaab6365cd6aa6caf183ae7dbbd94ee254a3faec71984a48ece6f8",
+    "benchmarks/Horners/paper_proof.md": "0d191afc57436732fe4783b179c36a0ed179f68bc0fac5e47235b5448d2af8b2",
+    "benchmarks/Horners/target.v": "baccec93c437929183a8d34786fd188f91c558ee5b271854cd1961019e31da18",
+    "benchmarks/contour_right/formalisation.md": "13f26fc35efc2af6418b3f1b69a129a20a32e8525d45b36b2d57c74916cdc3bb",
+    "benchmarks/contour_right/library_interface.v": "c3f50fbe548a4ec72a34399eea2452a98ce8df11c75ab13eaf5d07b16ae82f54",
+    "benchmarks/contour_right/paper_proof.md": "2c839fee8e7c7e5094eed358d981d9604ec7978d3928f0a88f8e51146bf77360",
+    "benchmarks/contour_right/target.v": "2a515f65d033af8b62cab1d30fc53e906423d17c51472810392a116ca2090e24",
+    "benchmarks/contour_row/formalisation.md": "72921ec8faec2fad6b84379c0ba2933badcbfacf60219f5079b42b58fdb47d43",
+    "benchmarks/contour_row/library_interface.v": "600fe0bb0616857d8d2e1dadf029b0400d526633bea2ab74d5d3a0c576e39f8d",
+    "benchmarks/contour_row/paper_proof.md": "0853899f49d4077084a98835b57d101c1140fde8ff485aaf5908465fc1ecd40b",
+    "benchmarks/contour_row/target.v": "ec1787fe691d0b52ffe6cbc66883fe48b92e19c8b68770580ca8a54ee983a61a",
+    "benchmarks/library.md": "bc3c45c551aee6b34b86db58aac5cf081dace8c48bed3de6de85e4eb9e0d03f5",
+    "benchmarks/monitor/formalisation.md": "603ff14d00e1065d69a621275ac30139f4c34ad69f7560e88972a7c1be2d9816",
+    "benchmarks/monitor/library_interface.v": "239a01a85f3949b9dfa9eaf4449740a953f753cc379f3be4385cba440a4a538c",
+    "benchmarks/monitor/paper_proof.md": "844d16534de639a5c085261626b7bfa0d46d0ead636162b78cd2acfb016038e8",
+    "benchmarks/monitor/target.v": "7e2cb5bea00965ca233a17be8305e8f1ed5ca9e4525a6549ad5a0a0bb45026e9",
+    "benchmarks/preHorners/formalisation.md": "f7262995351f56dda115c780081e01fc7e4a133abee0e08d69dd0e8b1cc7f2ca",
+    "benchmarks/preHorners/library_interface.v": "b1209eb5d472fd54ea9cdb02bc880c98730f8795c21fb519a7e1900ee7258267",
+    "benchmarks/preHorners/paper_proof.md": "abb6f822f67adb6e383766b395846e91241edadb9efddfdd5104e73c83f392e9",
+    "benchmarks/preHorners/target.v": "7fdab9ebb4ab4622cb4427bcaaf54de7bb86ec22ce70f1347848c78b41cb7895",
+    "benchmarks/system.txt": "78d08a0e2417e286eb6c9c97ab9eadde32201c980075601a48c5b6a09af0b379",
+    "library/axioms.v": "23742bfb866bfc8e6b2890b54ce1a005549065725961b7e5c5a5179cc8b82f1a",
+    "library/basic.v": "c6c8d825ffd2518bb93ebaed4296612ef422649e2d5764712cff24a8ad054495",
+    "library/contour_prerequisites.v": "123ea21347a065a801d775c577776fe89ba87510db5969a6cb4a2f3d25c2613d",
+    "library/convolver_support.v": "3c0ab3e10a4af3ab1d76214a69fd986988bf954a233ce522a81c3336240cb3c3",
+    "library/equational_helpers.v": "316da38aca7c8e5ea2606e05d185a45cb9b2b40a29ec61ec18a5758473ab8ba9",
+    "library/grid_helpers.v": "550a7424e460d18d16067094a6a37722074a7908a50554aeb18e5663a84da090",
+    "library/grid_support.v": "6e0894a90c27a24a678f065f96bfc6593f4e02b778b70e85d711111c035dfb9e",
+    "library/loop.v": "4895a54d11dcd3c1f37b7ddc4228d9cb0c096c1f12fafd1c7a37a1d2ea62946a",
+    "library/monitor_prerequisites.v": "ffdaf9bf4ad856cabd203320d0f29949058a1f05792e158800946800dca0efb2",
+    "library/rec.v": "6f7743fdc804c99db78c3eb244b26679587bc1a6f4df58eb95d0f045a17ca4b4",
+    "library/rel.v": "04ce58f47a94e5d5b62bdf577e7dd3bb566660781dc0303f485758457e1a11b8",
+    "library/rows.v": "e54de70d06aa6c408b50a6071b8cfcd378faba9a4cefc68097bdb85647baaa4c",
+    "library/tutorial.v": "9026cd5e4349d2df39b76edb0d66ad120435902af857993c8ecbc91dd2e03641",
+    "library/twod.v": "7f15aee74d197cadb5e531d5ec7d880b3366f34a7a63e6f24f2c54124367d531",
+    "library/wire.v": "44bcf2bfcdc38976136abedd6eeb64f93eedeb9e3bd2faa3f33b65492b235b7d",
+    "library/wire_rec.v": "324a1ffc4b5a66ed31481b7045be0f9ac3bb93ea4a0ab6333313cbfa34921c35",
+    "prover/prompts/prompt_plan.txt": "cd52ed51fe26c5a9440cfd390e61f8d4f11d9a5e8fa6c50e48c79ede42c3366c",
+    "prover/prompts/prompt_whole_proof.txt": "0ee93f68a297d13cbe270d3519b84b8fb7db24747810019dde482f95d7b1e275"
+  }
+}
